@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/fontawesome.min.css">
+	<title>Awwal Design - A design agency </title>
+</head>
+<body>
+<!-- Header -->
+<header>
+  	<a href="#" class="logo">
+    	<img src="https://cdn2.hubspot.net/hubfs/3067823/awwal/Awwal%20Home%20Page/Awwal%20Design%20Logo.svg" alt="Awwal Design Logo">
+  	</a>
+  	<div class="mobile-humberger-icon">
+      <span></span>  
+  	</div>
+	<div class="menu">
+	    <div class="menu-inner">
+	      	<a target="_blank" href="https://marketplace.hubspot.com/products?provider=Awwal+Design">HubSpot Templates</a>
+	      	<a target="_blank" href="https://awwaldesign.freshdesk.com/support/solutions">Documentation</a>
+	      	<a class="get-touch" href="mailto:awwaldesign@gmail.com">GET IN TOUCH</a>
+	    </div>
+	</div>
+</header>
+
+<!-- Main Content -->
+<div class="main-content">
+	<div class="intro">
+		<img src="images/dots.png">
+		<div class="intro-inner">
+			<div class="container">
+				<h6>A design agency that can help you with</h6>
+				<h1>HubSpot Design <br>Solutions</h1>
+				<a href="#services">SEE HOW WE CAN HELP &nbsp; <span>↓</span></a>
+			</div>
+		</div>
+	</div>
+
+	<div id="services" class="services">
+		<div class="container">
+			<div class="services-box">
+				<div class="services-box-inner">
+					<h2>HubSpot Custom Design Solutions</h2>
+					<p>Your vision, our expertise. As a certified expert, we can handle every problem with ease.</p>
+					<b>We can help you build:</b>
+					<ul>
+						<li>Landing Pages</li>
+						<li>Email Templates</li>
+						<li>Blog Templates</li>
+						<li>Website Pages</li>
+						<li>HubSpot Migration</li>
+						<li>Many Other Services</li>
+					</ul>
+					<a href="mailto:awwaldesign@gmail.com">LET'S TALK <img src="images/right arrow.svg"></a>
+				</div>
+			</div>
+			<div class="services-box">
+				<div class="services-box-inner">
+					<h2>HubSpot Templates</h2>
+					<p>In a hurry?  Want to deploy as quickly as possible? We have variety of templates which are easy to use and customize. Use our templates and get your job done faster and easier!</p>
+					<p>Simply install and enjoy!</p>
+					<a target="_blank" href="https://marketplace.hubspot.com/products?provider=Awwal+Design">VIEW TEMPLATES <img src="images/right arrow.svg"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="certified-expert">
+		<div class="container">
+			<h2>Certified Expert</h2>
+			<div class="two-col">
+				<img src="images/COS designer.png">
+				<img src="images/huspot certified.png">
+				<h6>Masters of our craft</h6>
+				<h4>Awwal Design is a certified HubSpot champion user</h4>
+				<a href="mailto:awwaldesign@gmail.com">LET'S TALK</a>
+			</div>
+			<div class="two-col">
+				<img src="images/certificates.png">
+			</div>
+		</div>
+	</div>
+		
+</div>
+
+<!-- Footer -->
+<footer></footer>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+
+<script type="text/javascript">
+	// Fix Header JS
+	$(window).scroll(function() {    
+	    var scroll = $(window).scrollTop();
+	    if (scroll > 100) {
+	        $("header").addClass("fix-header");
+	    } else {
+	        $("header").removeClass("fix-header");
+	    }
+	});
+	$(document).ready(function(){
+		var headerHeight = 175;
+		$(".intro a, .get-touch, .certified-expert a").on('click', function(event) {
+		    if (this.hash !== "") {
+		      	event.preventDefault();
+		      	var hash = this.hash;
+		      	$('html, body').animate({
+        		scrollTop: $( $.attr(this, 'href') ).offset().top
+      		}, 800, function(){
+           	//window.location.hash = hash;
+      		});
+		}
+  		});
+	});
+
+	$('.testimonial-outer').masonry({
+	  	itemSelector: '.testimonial-box'
+	});
+
+	$(".mobile-humberger-icon").click(function(){
+      	$(".menu").toggleClass("menu-open");
+      	$("body").toggleClass("res-menu-open");
+  	}); 
+  	$('.testimonial-outer').masonry({
+      	itemSelector: '.testimonial-box'
+  	});
+</script>
+</body>
+</html>
